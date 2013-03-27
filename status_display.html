@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2. API Reference &mdash; Public Database 0.1 documentation</title>
+    <title>3. Status Display Reference &mdash; Public Database 0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -28,8 +28,8 @@
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="Public Database 0.1 documentation" href="index.html" />
-    <link rel="next" title="2.1. API Views Reference" href="api_views.html" />
-    <link rel="prev" title="1. API Tutorial" href="api_tutorial.html" /> 
+    <link rel="next" title="3.1. Status Display Views Reference" href="status_display_views.html" />
+    <link rel="prev" title="2.1. API Views Reference" href="api_views.html" /> 
   </head>
   <body>
     <div class="related">
@@ -42,10 +42,10 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="api_views.html" title="2.1. API Views Reference"
+          <a href="status_display_views.html" title="3.1. Status Display Views Reference"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="api_tutorial.html" title="1. API Tutorial"
+          <a href="api_views.html" title="2.1. API Views Reference"
              accesskey="P">previous</a> |</li>
         <li><a href="index.html">Public Database 0.1 documentation</a> &raquo;</li> 
       </ul>
@@ -56,23 +56,27 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="module-django_publicdb.api">
-<span id="api-reference"></span><h1>2. API Reference<a class="headerlink" href="#module-django_publicdb.api" title="Permalink to this headline">¶</a></h1>
-<p>Application Programming Interface for HiSPARC Public Database</p>
-<p>The API simplifies data access for data contained in the
-<a class="reference external" href="http://data.hisparc.nl">HiSPARC Public Database</a>.  It was born out of the
-need for easy access to up-to-date information about stations.</p>
+  <div class="section" id="module-django_publicdb.status_display">
+<span id="status-display-reference"></span><h1>3. Status Display Reference<a class="headerlink" href="#module-django_publicdb.status_display" title="Permalink to this headline">¶</a></h1>
+<p>Station Status Display</p>
+<p>The Status Display provides webpages that display summaries of data measured
+by stations.</p>
 <p>The following packages and modules are included:</p>
 <dl class="docutils">
+<dt><tt class="xref py py-mod docutils literal"><span class="pre">nagios</span></tt></dt>
+<dd>definitions that access nagios (vpn.hisparc.nl) to retrieve station status</dd>
 <dt><tt class="xref py py-mod docutils literal"><span class="pre">urls</span></tt></dt>
-<dd>urls that can be called and will be passed on to functions</dd>
+<dd>url resolvers</dd>
 <dt><tt class="xref py py-mod docutils literal"><span class="pre">views</span></tt></dt>
-<dd>definitions that return specific data from the database</dd>
+<dd>definitions which return pages with data for the HiSPARC stations</dd>
 </dl>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="api_views.html">2.1. API Views Reference</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="status_display_views.html">3.1. Status Display Views Reference</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="status_display_nagios.html">3.2. Nagios Status Reference</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -89,14 +93,14 @@ need for easy access to up-to-date information about stations.</p>
               <img class="logo" src="_static/header.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="api_tutorial.html"
-                        title="previous chapter">1. API Tutorial</a></p>
-  <h4>Next topic</h4>
   <p class="topless"><a href="api_views.html"
-                        title="next chapter">2.1. API Views Reference</a></p>
+                        title="previous chapter">2.1. API Views Reference</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="status_display_views.html"
+                        title="next chapter">3.1. Status Display Views Reference</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="_sources/api.txt"
+    <li><a href="_sources/status_display.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -126,10 +130,10 @@ need for easy access to up-to-date information about stations.</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="api_views.html" title="2.1. API Views Reference"
+          <a href="status_display_views.html" title="3.1. Status Display Views Reference"
              >next</a> |</li>
         <li class="right" >
-          <a href="api_tutorial.html" title="1. API Tutorial"
+          <a href="api_views.html" title="2.1. API Views Reference"
              >previous</a> |</li>
         <li><a href="index.html">Public Database 0.1 documentation</a> &raquo;</li> 
       </ul>

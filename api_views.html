@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>1.1. API Views Reference &mdash; Public Database 0.1 documentation</title>
+    <title>2.1. API Views Reference &mdash; Public Database 0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -28,8 +28,9 @@
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="Public Database 0.1 documentation" href="index.html" />
-    <link rel="up" title="1. API Reference" href="api.html" />
-    <link rel="prev" title="1. API Reference" href="api.html" /> 
+    <link rel="up" title="2. API Reference" href="api.html" />
+    <link rel="next" title="3. Status Display Reference" href="status_display.html" />
+    <link rel="prev" title="2. API Reference" href="api.html" /> 
   </head>
   <body>
     <div class="related">
@@ -42,10 +43,13 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="api.html" title="1. API Reference"
+          <a href="status_display.html" title="3. Status Display Reference"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="2. API Reference"
              accesskey="P">previous</a> |</li>
         <li><a href="index.html">Public Database 0.1 documentation</a> &raquo;</li>
-          <li><a href="api.html" accesskey="U">1. API Reference</a> &raquo;</li> 
+          <li><a href="api.html" accesskey="U">2. API Reference</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -55,7 +59,7 @@
           <div class="body">
             
   <div class="section" id="module-django_publicdb.api.views">
-<span id="api-views-reference"></span><h1>1.1. API Views Reference<a class="headerlink" href="#module-django_publicdb.api.views" title="Permalink to this headline">¶</a></h1>
+<span id="api-views-reference"></span><h1>2.1. API Views Reference<a class="headerlink" href="#module-django_publicdb.api.views" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="django_publicdb.api.views.clusters">
 <tt class="descclassname">django_publicdb.api.views.</tt><tt class="descname">clusters</tt><big>(</big><em>request</em>, <em>country_id=None</em><big>)</big><a class="headerlink" href="#django_publicdb.api.views.clusters" title="Permalink to this definition">¶</a></dt>
@@ -69,7 +73,7 @@ By cluster we here mean the main clusters, which contain subclusters.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>country_id</strong> &#8211; a country number identifier, give this to only get
 clusters from a specific country.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">clusters. A list containing the name and number of all
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of dictionaries containing the name and number of all
 clusters that matched the given parameters.</td>
 </tr>
 </tbody>
@@ -95,7 +99,7 @@ date.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">config. A dictionary containing the entire configuration from
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dictionary containing the entire configuration from
 the HiSPARC DAQ.</p>
 </td>
 </tr>
@@ -112,8 +116,7 @@ the HiSPARC DAQ.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">countries. A list containing the name and number of all
-countries.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of dictionaries containing the name and number of all countries.</td>
 </tr>
 </tbody>
 </table>
@@ -157,8 +160,7 @@ specific date, or at all.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">has_data. A boolean, True if the given station has shower
-data, False otherwise.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">boolean, True if the given station has shower data, False otherwise.</p>
 </td>
 </tr>
 </tbody>
@@ -183,8 +185,7 @@ specific date, or at all.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">has_weather. A boolean, True if the given station has weather
-data, False otherwise.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">boolean, True if the given station has weather data, False otherwise.</p>
 </td>
 </tr>
 </tbody>
@@ -216,8 +217,8 @@ going for a shorter time period.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>station_id</strong> &#8211; a stationn number identifier.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">num_events. A number (long) containing the total number of
-events ever recorded by the given station.</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">integer containing the total number of events ever recorded by
+the given station.</td>
 </tr>
 </tbody>
 </table>
@@ -240,8 +241,8 @@ events ever recorded by the given station.</td>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">num_events. A number (long) containing the number of events
-recorded by the station on the given date.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">integer denoting the number of events recorded by the station
+on the given date.</p>
 </td>
 </tr>
 </tbody>
@@ -267,8 +268,8 @@ hour.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">num_events. A number (long) containing the number of events
-recorded by the station in hour on date.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">integer giving the number of events recorded by the station
+in hour on date.</p>
 </td>
 </tr>
 </tbody>
@@ -292,9 +293,8 @@ month.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">num_events. A number (long) containing the total number of
-events recorded by the given station in the given month of the given
-year.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">integer containing the total number of events recorded by the
+given station in the given month of the given year.</p>
 </td>
 </tr>
 </tbody>
@@ -317,8 +317,8 @@ the given year.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">num_events. A number (long) containing the total number of
-events recorded by the given station in the given year.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">integer containing the total number of events recorded by the
+given station in the given year.</p>
 </td>
 </tr>
 </tbody>
@@ -334,12 +334,11 @@ events recorded by the given station in the given year.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>station_id</strong> &#8211; a station number identifier</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>station_id</strong> &#8211; a station number identifier.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">station_info. This is a dictionary containing info about the
-station. Most importantly, this contains information about the
-position of the station, including the position of the individual
-scintillators.</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary containing info about the station. Most importantly,
+this contains information about the position of the station,
+including the position of the individual scintillators.</td>
 </tr>
 </tbody>
 </table>
@@ -357,8 +356,8 @@ scintillators.</td>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>subcluster_id</strong> &#8211; a subcluster number identifier. If given, only
 stations belonging to that subcluster will be included in the list.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">stations. This is a list containing dictionaries which consist of
-the name and number of each station (matching the subcluster).</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list containing dictionaries which consist of the name and number
+of each station (matching the subcluster).</td>
 </tr>
 </tbody>
 </table>
@@ -380,8 +379,8 @@ the name and number of each station (matching the subcluster).</td>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">stations. A list containing the name and number of each station
-that has measured events on the given date.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of dictionaries containing the name and number of each
+station that has measured events on the given date.</p>
 </td>
 </tr>
 </tbody>
@@ -404,8 +403,8 @@ that has measured events on the given date.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">stations. A list containing the name and number of each station
-that has measured weather data on the given date.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of dictionaries containing the name and number of each
+station that has measured weather data on the given date.</p>
 </td>
 </tr>
 </tbody>
@@ -425,7 +424,7 @@ cluster.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cluster_id</strong> &#8211; a cluster number identifier, give this to only get
 subclusters from this cluster.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">subclusters. A list containing the name and number of all
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of dictionaries containing the name and number of all
 subclusters that matched the given parameters.</td>
 </tr>
 </tbody>
@@ -436,7 +435,15 @@ subclusters that matched the given parameters.</td>
 <dt id="django_publicdb.api.views.validate_date">
 <tt class="descclassname">django_publicdb.api.views.</tt><tt class="descname">validate_date</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#django_publicdb.api.views.validate_date" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if date is outside HiSPARC project range</p>
-<p>If not valid, a 404 (Not Found) should probably be returned to the user.</p>
+<p>If not valid, a 404 (Not Found) should be returned to the user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean, True if the date is in the range, False otherwise.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <p>Contents:</p>
@@ -457,7 +464,10 @@ subclusters that matched the given parameters.</td>
             </a></p>
   <h4>Previous topic</h4>
   <p class="topless"><a href="api.html"
-                        title="previous chapter">1. API Reference</a></p>
+                        title="previous chapter">2. API Reference</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="status_display.html"
+                        title="next chapter">3. Status Display Reference</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/api_views.txt"
@@ -490,10 +500,13 @@ subclusters that matched the given parameters.</td>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="api.html" title="1. API Reference"
+          <a href="status_display.html" title="3. Status Display Reference"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="2. API Reference"
              >previous</a> |</li>
         <li><a href="index.html">Public Database 0.1 documentation</a> &raquo;</li>
-          <li><a href="api.html" >1. API Reference</a> &raquo;</li> 
+          <li><a href="api.html" >2. API Reference</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
