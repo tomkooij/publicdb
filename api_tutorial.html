@@ -27,7 +27,7 @@
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="Public Database 0.1 documentation" href="index.html" />
-    <link rel="next" title="3. API Reference" href="api.html" />
+    <link rel="next" title="3. HiSPARC Maps" href="hisparc_maps.html" />
     <link rel="prev" title="1. Data access" href="data_access.html" /> 
   </head>
   <body>
@@ -41,7 +41,7 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="api.html" title="3. API Reference"
+          <a href="hisparc_maps.html" title="3. HiSPARC Maps"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="data_access.html" title="1. Data access"
@@ -128,16 +128,18 @@ API to get an up-to-date list of stations. It will then show a
 drop-down menu from which a station can be selected, once you have
 chosen a station you can click the <tt class="code docutils literal"><span class="pre">Get</span> <span class="pre">info</span></tt> button to make
 Javascript get the station information. To try this you can either use
-this example page: <a class="reference external" href="http://jsfiddle.net/NCWXq/1/">jsFiddle</a> or create
+this example page: <a class="reference external" href="http://jsfiddle.net/NCWXq/2/">jsFiddle</a> or create
 your own HTML file with this code:</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/1999/xhtml&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://data.hisparc.nl/media/static/scripts/jquery-1.8.2.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script&gt;</span>
     <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// Get an up-to-date list of HiSPARC stations</span>
         <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span>
             <span class="s1">&#39;http://data.hisparc.nl/api/stations/&#39;</span><span class="p">,</span>
             <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// Create the drop-down menu</span>
                 <span class="kd">var</span> <span class="nx">select</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;select&gt;&#39;</span><span class="p">);</span>
                 <span class="kd">var</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">;</span>
                 <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
@@ -146,8 +148,10 @@ your own HTML file with this code:</p>
                     <span class="nx">select</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;option&gt;&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">id</span> <span class="o">+</span> <span class="s1">&#39; - &#39;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">));}</span>
                 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#station_list&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">select</span><span class="p">);});</span>
 
+        <span class="c1">// Attach a function to the Get info button</span>
         <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#get_station&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">id</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#station_list&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;select&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="c1">// Get info for selected station and display it in a nice way</span>
             <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">&#39;http://data.hisparc.nl/api/station/&#39;</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
                       <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
                           <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#station_info&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="mi">4</span><span class="p">));</span>
@@ -169,13 +173,13 @@ your own HTML file with this code:</p>
 <div class="section" id="python-example">
 <h2>2.3. Python example<a class="headerlink" href="#python-example" title="Permalink to this headline">¶</a></h2>
 <p>In this example we will use several standard Python libraries and the
-popular plotting library matplotlib (pylab). We start by importing the
-required libraries, one to get data from the urls, one to make working
-with dates easy and the plotting library. Then define the start values
-and perpare two empty lists in which the data can be placed. Then a
-while loop is used to loop over all days between datum and end_datum,
-reading each corresponding url. Finally a plot is made, setting the
-dates against their values.</p>
+popular plotting library <a class="reference external" href="http://matplotlib.org">matplotlib</a> (pylab).
+We start by importing the required libraries, one to get data from the
+urls, one to make working with dates easy and the plotting library. Then
+define the start values and perpare two empty lists in which the data
+can be placed. Then a while loop is used to loop over all days between
+datum and end_datum, reading each corresponding url. Finally a plot is
+made, setting the dates against their values.</p>
 <p>Start Python and type (copy/paste) the following lines of code:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">urlopen</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">timedelta</span>
@@ -225,8 +229,8 @@ dates against their values.</p>
   <p class="topless"><a href="data_access.html"
                         title="previous chapter">1. Data access</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="api.html"
-                        title="next chapter">3. API Reference</a></p>
+  <p class="topless"><a href="hisparc_maps.html"
+                        title="next chapter">3. HiSPARC Maps</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/api_tutorial.txt"
@@ -259,7 +263,7 @@ dates against their values.</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="api.html" title="3. API Reference"
+          <a href="hisparc_maps.html" title="3. HiSPARC Maps"
              >next</a> |</li>
         <li class="right" >
           <a href="data_access.html" title="1. Data access"
