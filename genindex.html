@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Index &mdash; Public Database 0.1 documentation</title>
+    <title>Index &mdash; Public Database 0.2 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.1',
+        VERSION:     '0.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="Public Database 0.1 documentation" href="index.html" /> 
+    <link rel="top" title="Public Database 0.2 documentation" href="index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,7 +39,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">Public Database 0.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Public Database 0.2 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -83,10 +83,14 @@
   <dt><a href="api_views.html#django_publicdb.api.views.countries">countries() (in module django_publicdb.api.views)</a>
   </dt>
 
+      
+  <dt><a href="status_display_views.html#django_publicdb.status_display.views.create_histogram">create_histogram() (in module django_publicdb.status_display.views)</a>
+  </dt>
+
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="status_display_views.html#django_publicdb.status_display.views.create_histogram">create_histogram() (in module django_publicdb.status_display.views)</a>
+  <dt><a href="status_display_views.html#django_publicdb.status_display.views.create_histogram_network">create_histogram_network() (in module django_publicdb.status_display.views)</a>
   </dt>
 
       
@@ -94,7 +98,7 @@
   </dt>
 
       
-  <dt><a href="api_views.html#django_publicdb.api.views.Nagios.critical">critical (django_publicdb.api.views.Nagios attribute)</a>
+  <dt><a href="api_views.html#django_publicdb.api.views.Nagios.critical">critical (Nagios attribute)</a>
   </dt>
 
   </dl></td>
@@ -144,6 +148,14 @@
   </dt>
 
       
+  <dt><a href="status_display_views.html#django_publicdb.status_display.views.get_coincidencenumber_histogram_source">get_coincidencenumber_histogram_source() (in module django_publicdb.status_display.views)</a>
+  </dt>
+
+      
+  <dt><a href="status_display_views.html#django_publicdb.status_display.views.get_coincidencetime_histogram_source">get_coincidencetime_histogram_source() (in module django_publicdb.status_display.views)</a>
+  </dt>
+
+      
   <dt><a href="status_display_views.html#django_publicdb.status_display.views.get_config_source">get_config_source() (in module django_publicdb.status_display.views)</a>
   </dt>
 
@@ -157,6 +169,10 @@
 
       
   <dt><a href="status_display_views.html#django_publicdb.status_display.views.get_dataset_source">get_dataset_source() (in module django_publicdb.status_display.views)</a>
+  </dt>
+
+      
+  <dt><a href="api_views.html#django_publicdb.api.views.get_event_traces">get_event_traces() (in module django_publicdb.api.views)</a>
   </dt>
 
       
@@ -175,12 +191,12 @@
   <dt><a href="status_display_views.html#django_publicdb.status_display.views.get_histogram_source">get_histogram_source() (in module django_publicdb.status_display.views)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api_views.html#django_publicdb.api.views.get_pulseheight_drift">get_pulseheight_drift() (in module django_publicdb.api.views)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api_views.html#django_publicdb.api.views.get_pulseheight_drift_last_14_days">get_pulseheight_drift_last_14_days() (in module django_publicdb.api.views)</a>
   </dt>
@@ -210,6 +226,10 @@
   </dt>
 
       
+  <dt><a href="status_display_nagios.html#django_publicdb.status_display.nagios.get_status_counts">get_status_counts() (in module django_publicdb.status_display.nagios)</a>
+  </dt>
+
+      
   <dt><a href="api_views.html#django_publicdb.api.views.get_subcluster_dict">get_subcluster_dict() (in module django_publicdb.api.views)</a>
   </dt>
 
@@ -229,10 +249,6 @@
   <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api_views.html#django_publicdb.api.views.has_data">has_data() (in module django_publicdb.api.views)</a>
-  </dt>
-
-      
-  <dt><a href="api_views.html#django_publicdb.api.views.has_weather">has_weather() (in module django_publicdb.api.views)</a>
   </dt>
 
   </dl></td>
@@ -280,29 +296,25 @@
   </dt>
 
       
-  <dt><a href="status_display_views.html#django_publicdb.status_display.views.nav_years">nav_years() (in module django_publicdb.status_display.views)</a>
-  </dt>
-
-      
-  <dt><a href="api_views.html#django_publicdb.api.views.num_events">num_events() (in module django_publicdb.api.views)</a>
+  <dt><a href="status_display_views.html#django_publicdb.status_display.views.nav_months_network">nav_months_network() (in module django_publicdb.status_display.views)</a>
   </dt>
 
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="api_views.html#django_publicdb.api.views.num_events_day">num_events_day() (in module django_publicdb.api.views)</a>
+  <dt><a href="status_display_views.html#django_publicdb.status_display.views.nav_years">nav_years() (in module django_publicdb.status_display.views)</a>
   </dt>
 
       
-  <dt><a href="api_views.html#django_publicdb.api.views.num_events_hour">num_events_hour() (in module django_publicdb.api.views)</a>
+  <dt><a href="status_display_views.html#django_publicdb.status_display.views.nav_years_network">nav_years_network() (in module django_publicdb.status_display.views)</a>
   </dt>
 
       
-  <dt><a href="api_views.html#django_publicdb.api.views.num_events_month">num_events_month() (in module django_publicdb.api.views)</a>
+  <dt><a href="status_display_views.html#django_publicdb.status_display.views.network_coincidences">network_coincidences() (in module django_publicdb.status_display.views)</a>
   </dt>
 
       
-  <dt><a href="api_views.html#django_publicdb.api.views.num_events_year">num_events_year() (in module django_publicdb.api.views)</a>
+  <dt><a href="api_views.html#django_publicdb.api.views.num_events">num_events() (in module django_publicdb.api.views)</a>
   </dt>
 
   </dl></td>
@@ -312,7 +324,7 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="api_views.html#django_publicdb.api.views.Nagios.ok">ok (django_publicdb.api.views.Nagios attribute)</a>
+  <dt><a href="api_views.html#django_publicdb.api.views.Nagios.ok">ok (Nagios attribute)</a>
   </dt>
 
   </dl></td>
@@ -322,15 +334,19 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="status_display_views.html#django_publicdb.status_display.views.plot_config">plot_config() (in module django_publicdb.status_display.views)</a>
+  <dt><a href="status_display_nagios.html#django_publicdb.status_display.nagios.pc_name_to_station_number">pc_name_to_station_number() (in module django_publicdb.status_display.nagios)</a>
   </dt>
 
       
-  <dt><a href="status_display_views.html#django_publicdb.status_display.views.plot_dataset">plot_dataset() (in module django_publicdb.status_display.views)</a>
+  <dt><a href="status_display_views.html#django_publicdb.status_display.views.plot_config">plot_config() (in module django_publicdb.status_display.views)</a>
   </dt>
 
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="status_display_views.html#django_publicdb.status_display.views.plot_dataset">plot_dataset() (in module django_publicdb.status_display.views)</a>
+  </dt>
+
       
   <dt><a href="status_display_nagios.html#django_publicdb.status_display.nagios.problem_list">problem_list() (in module django_publicdb.status_display.nagios)</a>
   </dt>
@@ -374,6 +390,10 @@
   </dt>
 
       
+  <dt><a href="status_display_views.html#django_publicdb.status_display.views.station_latest">station_latest() (in module django_publicdb.status_display.views)</a>
+  </dt>
+
+      
   <dt><a href="status_display_views.html#django_publicdb.status_display.views.station_status">station_status() (in module django_publicdb.status_display.views)</a>
   </dt>
 
@@ -387,6 +407,8 @@
   </dt>
 
       </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="status_display_views.html#django_publicdb.status_display.views.stations_by_country">stations_by_country() (in module django_publicdb.status_display.views)</a>
   </dt>
@@ -403,40 +425,16 @@
   <dt><a href="status_display_views.html#django_publicdb.status_display.views.stations_on_map">stations_on_map() (in module django_publicdb.status_display.views)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api_views.html#django_publicdb.api.views.stations_with_data">stations_with_data() (in module django_publicdb.api.views)</a>
   </dt>
 
-      
-  <dt><a href="api_views.html#django_publicdb.api.views.stations_with_data_day">stations_with_data_day() (in module django_publicdb.api.views)</a>
+      <dd><dl>
+        
+  <dt><a href="status_display_views.html#django_publicdb.status_display.views.stations_with_data">(in module django_publicdb.status_display.views)</a>
   </dt>
 
-      
-  <dt><a href="api_views.html#django_publicdb.api.views.stations_with_data_month">stations_with_data_month() (in module django_publicdb.api.views)</a>
-  </dt>
-
-      
-  <dt><a href="api_views.html#django_publicdb.api.views.stations_with_data_year">stations_with_data_year() (in module django_publicdb.api.views)</a>
-  </dt>
-
-      
-  <dt><a href="api_views.html#django_publicdb.api.views.stations_with_weather">stations_with_weather() (in module django_publicdb.api.views)</a>
-  </dt>
-
-      
-  <dt><a href="api_views.html#django_publicdb.api.views.stations_with_weather_day">stations_with_weather_day() (in module django_publicdb.api.views)</a>
-  </dt>
-
-      
-  <dt><a href="api_views.html#django_publicdb.api.views.stations_with_weather_month">stations_with_weather_month() (in module django_publicdb.api.views)</a>
-  </dt>
-
-      
-  <dt><a href="api_views.html#django_publicdb.api.views.stations_with_weather_year">stations_with_weather_year() (in module django_publicdb.api.views)</a>
-  </dt>
-
+      </dl></dd>
       
   <dt><a href="status_display_nagios.html#django_publicdb.status_display.nagios.status_lists">status_lists() (in module django_publicdb.status_display.nagios)</a>
   </dt>
@@ -452,7 +450,7 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="api_views.html#django_publicdb.api.views.Nagios.unknown">unknown (django_publicdb.api.views.Nagios attribute)</a>
+  <dt><a href="api_views.html#django_publicdb.api.views.Nagios.unknown">unknown (Nagios attribute)</a>
   </dt>
 
   </dl></td>
@@ -478,7 +476,7 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="api_views.html#django_publicdb.api.views.Nagios.warning">warning (django_publicdb.api.views.Nagios attribute)</a>
+  <dt><a href="api_views.html#django_publicdb.api.views.Nagios.warning">warning (Nagios attribute)</a>
   </dt>
 
   </dl></td>
@@ -523,12 +521,12 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">Public Database 0.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Public Database 0.2 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, HiSPARC.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

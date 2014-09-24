@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>3. HiSPARC Maps &mdash; Public Database 0.1 documentation</title>
+    <title>3. HiSPARC maps &mdash; Public Database 0.2 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.1',
+        VERSION:     '0.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="Public Database 0.1 documentation" href="index.html" />
+    <link rel="top" title="Public Database 0.2 documentation" href="index.html" />
     <link rel="next" title="4. API Reference" href="api.html" />
     <link rel="prev" title="2. API Tutorial" href="api_tutorial.html" /> 
   </head>
@@ -46,7 +46,7 @@
         <li class="right" >
           <a href="api_tutorial.html" title="2. API Tutorial"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Public Database 0.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Public Database 0.2 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -56,7 +56,7 @@
           <div class="body">
             
   <div class="section" id="hisparc-maps">
-<h1>3. HiSPARC Maps<a class="headerlink" href="#hisparc-maps" title="Permalink to this headline">¶</a></h1>
+<h1>3. HiSPARC maps<a class="headerlink" href="#hisparc-maps" title="Permalink to this headline">¶</a></h1>
 <p>Each HiSPARC station is equipped with a GPS antenne. This GPS is used
 to for time synchronization between stations and to determine the exact
 location of each station. All these locations are stored in our
@@ -133,13 +133,15 @@ shows another page which only has the map as its content. Example code:</p>
 <h3>3.2.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
 <p>To show a map of a specific region or location, use the syntax explained
 here. First start with the base url:</p>
-<div class="highlight-python"><pre>http://data.hisparc.nl/maps/</pre>
+<div class="highlight-python"><div class="highlight"><pre>http://data.hisparc.nl/maps/
+</pre></div>
 </div>
 <p>When no extra options are given the page zooms and positions the map
 such that all stations fit in the window. But you can also focus on a
 specific region or station. Several levels of regions are possible:</p>
-<div class="highlight-python"><pre>http://data.hisparc.nl/maps/[Country]/[Cluster]/[Subcluster]/
-http://data.hisparc.nl/maps/[Station id]/</pre>
+<div class="highlight-python"><div class="highlight"><pre>http://data.hisparc.nl/maps/[Country]/[Cluster]/[Subcluster]/
+http://data.hisparc.nl/maps/[Station id]/
+</pre></div>
 </div>
 <p>An overview of countries, clusters and subclusters can be found on
 <a class="reference external" href="http://data.hisparc.nl/">http://data.hisparc.nl/</a> . First you can choose to focus on a Country:</p>
@@ -180,7 +182,7 @@ station number:</p>
             </a></p>
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">3. HiSPARC Maps</a><ul>
+<li><a class="reference internal" href="#">3. HiSPARC maps</a><ul>
 <li><a class="reference internal" href="#openstreetmap">3.1. OpenStreetMap</a><ul>
 <li><a class="reference internal" href="#controls">3.1.1. Controls</a></li>
 <li><a class="reference internal" href="#status">3.1.2. Status</a></li>
@@ -237,12 +239,12 @@ station number:</p>
         <li class="right" >
           <a href="api_tutorial.html" title="2. API Tutorial"
              >previous</a> |</li>
-        <li><a href="index.html">Public Database 0.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Public Database 0.2 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, HiSPARC.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

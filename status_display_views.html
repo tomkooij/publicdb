@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>5.1. Status Display Views Reference &mdash; Public Database 0.1 documentation</title>
+    <title>5.1. Status Display Views Reference &mdash; Public Database 0.2 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.1',
+        VERSION:     '0.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="Public Database 0.1 documentation" href="index.html" />
+    <link rel="top" title="Public Database 0.2 documentation" href="index.html" />
     <link rel="up" title="5. Status Display Reference" href="status_display.html" />
     <link rel="next" title="5.2. Nagios Status Reference" href="status_display_nagios.html" />
     <link rel="prev" title="5. Status Display Reference" href="status_display.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="status_display.html" title="5. Status Display Reference"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Public Database 0.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">Public Database 0.2 documentation</a> &raquo;</li>
           <li><a href="status_display.html" accesskey="U">5. Status Display Reference</a> &raquo;</li> 
       </ul>
     </div>  
@@ -61,133 +61,167 @@
 <span id="status-display-views-reference"></span><h1>5.1. Status Display Views Reference<a class="headerlink" href="#module-django_publicdb.status_display.views" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="django_publicdb.status_display.views.create_histogram">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">create_histogram</tt><big>(</big><em>type</em>, <em>station</em>, <em>date</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.create_histogram" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">create_histogram</tt><big>(</big><em>type</em>, <em>station</em>, <em>date</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.create_histogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a histogram object</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="django_publicdb.status_display.views.create_histogram_network">
+<tt class="descname">create_histogram_network</tt><big>(</big><em>type</em>, <em>date</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.create_histogram_network" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a histogram object</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.create_plot_object">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">create_plot_object</tt><big>(</big><em>x_values</em>, <em>y_series</em>, <em>x_label</em>, <em>y_label</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.create_plot_object" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">create_plot_object</tt><big>(</big><em>x_values</em>, <em>y_series</em>, <em>x_label</em>, <em>y_label</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.create_plot_object" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.get_barometer_dataset_source">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">get_barometer_dataset_source</tt><big>(</big><em>request</em>, <em>station_id</em>, <em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_barometer_dataset_source" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_barometer_dataset_source</tt><big>(</big><em>request</em>, <em>station_number</em>, <em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_barometer_dataset_source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="django_publicdb.status_display.views.get_coincidencenumber_histogram_source">
+<tt class="descname">get_coincidencenumber_histogram_source</tt><big>(</big><em>request</em>, <em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_coincidencenumber_histogram_source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="django_publicdb.status_display.views.get_coincidencetime_histogram_source">
+<tt class="descname">get_coincidencetime_histogram_source</tt><big>(</big><em>request</em>, <em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_coincidencetime_histogram_source" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.get_config_source">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">get_config_source</tt><big>(</big><em>station_id</em>, <em>type</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_config_source" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_config_source</tt><big>(</big><em>station_number</em>, <em>type</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_config_source" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.get_current_config_source">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">get_current_config_source</tt><big>(</big><em>request</em>, <em>station_id</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_current_config_source" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_current_config_source</tt><big>(</big><em>request</em>, <em>station_number</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_current_config_source" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.get_dataset_source">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">get_dataset_source</tt><big>(</big><em>station_id</em>, <em>year</em>, <em>month</em>, <em>day</em>, <em>type</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_dataset_source" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_dataset_source</tt><big>(</big><em>year</em>, <em>month</em>, <em>day</em>, <em>type</em>, <em>station_number</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_dataset_source" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.get_eventtime_histogram_source">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">get_eventtime_histogram_source</tt><big>(</big><em>request</em>, <em>station_id</em>, <em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_eventtime_histogram_source" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_eventtime_histogram_source</tt><big>(</big><em>request</em>, <em>station_number</em>, <em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_eventtime_histogram_source" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.get_gps_config_source">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">get_gps_config_source</tt><big>(</big><em>request</em>, <em>station_id</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_gps_config_source" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_gps_config_source</tt><big>(</big><em>request</em>, <em>station_number</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_gps_config_source" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.get_gpspositions">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">get_gpspositions</tt><big>(</big><em>configs</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_gpspositions" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_gpspositions</tt><big>(</big><em>configs</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_gpspositions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all unique gps positions from the configs</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.get_histogram_source">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">get_histogram_source</tt><big>(</big><em>station_id</em>, <em>year</em>, <em>month</em>, <em>day</em>, <em>type</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_histogram_source" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_histogram_source</tt><big>(</big><em>year</em>, <em>month</em>, <em>day</em>, <em>type</em>, <em>station_number=None</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_histogram_source" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.get_pulseheight_histogram_source">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">get_pulseheight_histogram_source</tt><big>(</big><em>request</em>, <em>station_id</em>, <em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_pulseheight_histogram_source" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_pulseheight_histogram_source</tt><big>(</big><em>request</em>, <em>station_number</em>, <em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_pulseheight_histogram_source" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.get_pulseintegral_histogram_source">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">get_pulseintegral_histogram_source</tt><big>(</big><em>request</em>, <em>station_id</em>, <em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_pulseintegral_histogram_source" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_pulseintegral_histogram_source</tt><big>(</big><em>request</em>, <em>station_number</em>, <em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_pulseintegral_histogram_source" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.get_temperature_dataset_source">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">get_temperature_dataset_source</tt><big>(</big><em>request</em>, <em>station_id</em>, <em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_temperature_dataset_source" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_temperature_dataset_source</tt><big>(</big><em>request</em>, <em>station_number</em>, <em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_temperature_dataset_source" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.get_voltage_config_source">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">get_voltage_config_source</tt><big>(</big><em>request</em>, <em>station_id</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_voltage_config_source" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_voltage_config_source</tt><big>(</big><em>request</em>, <em>station_number</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.get_voltage_config_source" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.help">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">help</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.help" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">help</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.help" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show the static help page</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.nav_calendar">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">nav_calendar</tt><big>(</big><em>station</em>, <em>theyear</em>, <em>themonth</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.nav_calendar" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">nav_calendar</tt><big>(</big><em>theyear</em>, <em>themonth</em>, <em>station=None</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.nav_calendar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a month calendar with links</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.nav_months">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">nav_months</tt><big>(</big><em>station</em>, <em>theyear</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.nav_months" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">nav_months</tt><big>(</big><em>theyear</em>, <em>station</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.nav_months" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create list of months with links</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="django_publicdb.status_display.views.nav_months_network">
+<tt class="descname">nav_months_network</tt><big>(</big><em>theyear</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.nav_months_network" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create list of months with links</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.nav_years">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">nav_years</tt><big>(</big><em>station</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.nav_years" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">nav_years</tt><big>(</big><em>station=None</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.nav_years" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create list of previous years</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="django_publicdb.status_display.views.nav_years_network">
+<tt class="descname">nav_years_network</tt><big>(</big><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.nav_years_network" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create list of previous years</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="django_publicdb.status_display.views.network_coincidences">
+<tt class="descname">network_coincidences</tt><big>(</big><em>request</em>, <em>year=None</em>, <em>month=None</em>, <em>day=None</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.network_coincidences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show daily coincidences histograms for the entire network</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="django_publicdb.status_display.views.plot_config">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">plot_config</tt><big>(</big><em>type</em>, <em>configs</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.plot_config" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">plot_config</tt><big>(</big><em>type</em>, <em>configs</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.plot_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a plot object from station configs</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.plot_dataset">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">plot_dataset</tt><big>(</big><em>type</em>, <em>station</em>, <em>date</em>, <em>log=False</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.plot_dataset" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">plot_dataset</tt><big>(</big><em>type</em>, <em>station</em>, <em>date</em>, <em>log=False</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.plot_dataset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a dataset plot object</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.station">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">station</tt><big>(</big><em>request</em>, <em>station_id</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.station" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">station</tt><big>(</big><em>request</em>, <em>station_number</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.station" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show most recent histograms for a particular station</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.station_config">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">station_config</tt><big>(</big><em>request</em>, <em>station_id</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.station_config" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">station_config</tt><big>(</big><em>request</em>, <em>station_number</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.station_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show configuration history for a particular station</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.station_data">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">station_data</tt><big>(</big><em>request</em>, <em>station_id</em>, <em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.station_data" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">station_data</tt><big>(</big><em>request</em>, <em>station_number</em>, <em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.station_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show daily histograms for a particular station</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.station_has_data">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">station_has_data</tt><big>(</big><em>station</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.station_has_data" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">station_has_data</tt><big>(</big><em>station</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.station_has_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if there is valid event or weather data for the given station</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -203,39 +237,60 @@ weather or shower, between 2002 and now.</td>
 </dd></dl>
 
 <dl class="function">
+<dt id="django_publicdb.status_display.views.station_latest">
+<tt class="descname">station_latest</tt><big>(</big><em>request</em>, <em>station_number</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.station_latest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show daily histograms for a particular station</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="django_publicdb.status_display.views.station_status">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">station_status</tt><big>(</big><em>request</em>, <em>station_id</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.station_status" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">station_status</tt><big>(</big><em>request</em>, <em>station_number</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.station_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show daily histograms for a particular station</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.stations">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">stations</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.stations" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">stations</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.stations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show the default station list</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.stations_by_country">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">stations_by_country</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.stations_by_country" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">stations_by_country</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.stations_by_country" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show a list of stations, ordered by country, cluster and subcluster</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.stations_by_name">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">stations_by_name</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.stations_by_name" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">stations_by_name</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.stations_by_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show a list of stations, ordered by station name</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.stations_by_number">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">stations_by_number</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.stations_by_number" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">stations_by_number</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.stations_by_number" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show a list of stations, ordered by number</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.views.stations_on_map">
-<tt class="descclassname">django_publicdb.status_display.views.</tt><tt class="descname">stations_on_map</tt><big>(</big><em>request</em>, <em>country=None</em>, <em>cluster=None</em>, <em>subcluster=None</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.stations_on_map" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">stations_on_map</tt><big>(</big><em>request</em>, <em>country=None</em>, <em>cluster=None</em>, <em>subcluster=None</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.stations_on_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show all stations from a subcluster on a map</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="django_publicdb.status_display.views.stations_with_data">
+<tt class="descname">stations_with_data</tt><big>(</big><big>)</big><a class="headerlink" href="#django_publicdb.status_display.views.stations_with_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get list of station numbers with valid event or weather data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list with station numbers for stations that recorded data, either
+weather or shower, between 2002 and now.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <p>Contents:</p>
@@ -297,13 +352,13 @@ weather or shower, between 2002 and now.</td>
         <li class="right" >
           <a href="status_display.html" title="5. Status Display Reference"
              >previous</a> |</li>
-        <li><a href="index.html">Public Database 0.1 documentation</a> &raquo;</li>
+        <li><a href="index.html">Public Database 0.2 documentation</a> &raquo;</li>
           <li><a href="status_display.html" >5. Status Display Reference</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, HiSPARC.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

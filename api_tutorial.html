@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2. API Tutorial &mdash; Public Database 0.1 documentation</title>
+    <title>2. API Tutorial &mdash; Public Database 0.2 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.1',
+        VERSION:     '0.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="Public Database 0.1 documentation" href="index.html" />
-    <link rel="next" title="3. HiSPARC Maps" href="hisparc_maps.html" />
+    <link rel="top" title="Public Database 0.2 documentation" href="index.html" />
+    <link rel="next" title="3. HiSPARC maps" href="hisparc_maps.html" />
     <link rel="prev" title="1. Data access" href="data_access.html" /> 
   </head>
   <body>
@@ -41,12 +41,12 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="hisparc_maps.html" title="3. HiSPARC Maps"
+          <a href="hisparc_maps.html" title="3. HiSPARC maps"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="data_access.html" title="1. Data access"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Public Database 0.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Public Database 0.2 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -130,9 +130,9 @@ chosen a station you can click the <tt class="code docutils literal"><span class
 Javascript get the station information. To try this you can either use
 this example page: <a class="reference external" href="http://jsfiddle.net/NCWXq/2/">jsFiddle</a> or create
 your own HTML file with this code:</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/1999/xhtml&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://data.hisparc.nl/media/static/scripts/jquery-1.8.2.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/jquery-1.11.1.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script&gt;</span>
     <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">// Get an up-to-date list of HiSPARC stations</span>
@@ -180,7 +180,8 @@ define the start values and perpare two empty lists in which the data
 can be placed. Then a while loop is used to loop over all days between
 datum and end_datum, reading each corresponding url. Finally a plot is
 made, setting the dates against their values.</p>
-<p>Start Python and type (copy/paste) the following lines of code:</p>
+<p>Start Python and type (or copy/paste without the &#8216;&gt;&gt;&gt; &#8216;) the following
+lines of code:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">urlopen</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">timedelta</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="n">plot</span><span class="p">,</span> <span class="n">show</span>
@@ -230,7 +231,7 @@ made, setting the dates against their values.</p>
                         title="previous chapter">1. Data access</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="hisparc_maps.html"
-                        title="next chapter">3. HiSPARC Maps</a></p>
+                        title="next chapter">3. HiSPARC maps</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/api_tutorial.txt"
@@ -263,17 +264,17 @@ made, setting the dates against their values.</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="hisparc_maps.html" title="3. HiSPARC Maps"
+          <a href="hisparc_maps.html" title="3. HiSPARC maps"
              >next</a> |</li>
         <li class="right" >
           <a href="data_access.html" title="1. Data access"
              >previous</a> |</li>
-        <li><a href="index.html">Public Database 0.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Public Database 0.2 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, HiSPARC.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>
