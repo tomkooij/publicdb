@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2. API Tutorial &mdash; Public Database 0.2 documentation</title>
+    <title>2. API Tutorial &mdash; Public Database 0.3 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.2',
+        VERSION:     '0.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="Public Database 0.2 documentation" href="index.html" />
+    <link rel="top" title="Public Database 0.3 documentation" href="index.html" />
     <link rel="next" title="3. HiSPARC maps" href="hisparc_maps.html" />
     <link rel="prev" title="1. Data access" href="data_access.html" /> 
   </head>
@@ -46,7 +46,7 @@
         <li class="right" >
           <a href="data_access.html" title="1. Data access"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Public Database 0.2 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Public Database 0.3 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -104,7 +104,8 @@ key (<tt class="code docutils literal"><span class="pre">&quot;clusters&quot;</s
 <h3>2.1.1. Cluster list<a class="headerlink" href="#cluster-list" title="Permalink to this headline">¶</a></h3>
 <p>This tells us that if we want a list of all clusters we need to use the
 clusters option by appending <tt class="code docutils literal"><span class="pre">&quot;clusters/&quot;</span></tt> to the base url,
-resulting in the following: <a class="reference external" href="http://data.hisparc.nl/api/clusters/">http://data.hisparc.nl/api/clusters/</a>.</p>
+resulting in the following:
+<a class="reference external" href="http://data.hisparc.nl/api/clusters/">http://data.hisparc.nl/api/clusters/</a>.</p>
 <p>With this result:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Amsterdam&quot;</span><span class="p">,</span>
   <span class="s2">&quot;number&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">},</span>
@@ -180,8 +181,8 @@ define the start values and perpare two empty lists in which the data
 can be placed. Then a while loop is used to loop over all days between
 datum and end_datum, reading each corresponding url. Finally a plot is
 made, setting the dates against their values.</p>
-<p>Start Python and type (or copy/paste without the &#8216;&gt;&gt;&gt; &#8216;) the following
-lines of code:</p>
+<p>Start Python and type (or copy/paste without the :code:<a href="#id1"><span class="problematic" id="id2">`</span></a>&gt;&gt;&gt; <a href="#id3"><span class="problematic" id="id4">`</span></a>) the
+following lines of code:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">urlopen</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">timedelta</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="n">plot</span><span class="p">,</span> <span class="n">show</span>
@@ -200,6 +201,13 @@ lines of code:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">step</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="n">events</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
+<div class="section" id="sapphire">
+<h3>2.3.1. SAPPHiRE<a class="headerlink" href="#sapphire" title="Permalink to this headline">¶</a></h3>
+<p>The HiSPARC Python framework SAPPHiRE includes an API module. This module
+simplifies access to the API. See the SAPPHiRE documentation for more
+information:
+<a class="reference external" href="http://docs.hisparc.nl/sapphire/">http://docs.hisparc.nl/sapphire/</a>.</p>
 </div>
 </div>
 </div>
@@ -221,7 +229,10 @@ lines of code:</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#javascript-example">2.2. Javascript example</a></li>
-<li><a class="reference internal" href="#python-example">2.3. Python example</a></li>
+<li><a class="reference internal" href="#python-example">2.3. Python example</a><ul>
+<li><a class="reference internal" href="#sapphire">2.3.1. SAPPHiRE</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -269,11 +280,11 @@ lines of code:</p>
         <li class="right" >
           <a href="data_access.html" title="1. Data access"
              >previous</a> |</li>
-        <li><a href="index.html">Public Database 0.2 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Public Database 0.3 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2013, HiSPARC.
+        &copy; Copyright 2015, HiSPARC.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
