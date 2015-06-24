@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>3. HiSPARC maps &mdash; Public Database 0.3 documentation</title>
+    <title>HiSPARC maps &mdash; Public Database 0.4 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.3',
+        VERSION:     '0.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,9 +26,9 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="Public Database 0.3 documentation" href="index.html" />
-    <link rel="next" title="4. HiSPARC station layout" href="station_layout.html" />
-    <link rel="prev" title="2. API Tutorial" href="api_tutorial.html" /> 
+    <link rel="top" title="Public Database 0.4 documentation" href="index.html" />
+    <link rel="next" title="HiSPARC station layout" href="station_layout.html" />
+    <link rel="prev" title="API Tutorial" href="api_tutorial.html" /> 
   </head>
   <body>
     <div class="related">
@@ -41,12 +41,12 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="station_layout.html" title="4. HiSPARC station layout"
+          <a href="station_layout.html" title="HiSPARC station layout"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="api_tutorial.html" title="2. API Tutorial"
+          <a href="api_tutorial.html" title="API Tutorial"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Public Database 0.3 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Public Database 0.4 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -56,21 +56,21 @@
           <div class="body">
             
   <div class="section" id="hisparc-maps">
-<h1>3. HiSPARC maps<a class="headerlink" href="#hisparc-maps" title="Permalink to this headline">¶</a></h1>
+<h1>HiSPARC maps<a class="headerlink" href="#hisparc-maps" title="Permalink to this headline">¶</a></h1>
 <p>Each HiSPARC station is equipped with a GPS antenne. This GPS is used
 to for time synchronization between stations and to determine the exact
 location of each station. All these locations are stored in our
 database. The GPS positions can be found on the data pages of stations,
 via the API (<a class="reference internal" href="api.html"><em>API Reference</em></a>) and in the raw data.</p>
 <div class="section" id="openstreetmap">
-<h2>3.1. OpenStreetMap<a class="headerlink" href="#openstreetmap" title="Permalink to this headline">¶</a></h2>
+<h2>OpenStreetMap<a class="headerlink" href="#openstreetmap" title="Permalink to this headline">¶</a></h2>
 <p>Using the free <a class="reference external" href="http://www.openstreetmap.org">OpenStreetMap</a> service
 and the <a class="reference external" href="http://openlayers.org">OpenLayers</a> library we are able to
 visualize the detector network by showing the locations of the stations
 on a map.</p>
 <p>Here is an overview of the network: <a class="reference external" href="http://data.hisparc.nl/show/stations_on_map/">Stations on map</a></p>
 <div class="section" id="controls">
-<h3>3.1.1. Controls<a class="headerlink" href="#controls" title="Permalink to this headline">¶</a></h3>
+<h3>Controls<a class="headerlink" href="#controls" title="Permalink to this headline">¶</a></h3>
 <p>To keep the map clean we do not show any controls on the map. However,
 navigation is very intuitive and similar to what you may be familiar
 with from other map services. The controls are as follows:</p>
@@ -100,7 +100,7 @@ shown above the station indicators.</p>
 </div>
 </div>
 <div class="section" id="status">
-<h3>3.1.2. Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h3>
+<h3>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h3>
 <p>The stations on the map can have one of 4 colors to indicate the current
 status of that station. The status is retrieved from the <a class="reference external" href="http://vpn.hisparc.nl/">HiSPARC
 Monitoring System</a> when the page loads.</p>
@@ -113,7 +113,7 @@ Monitoring System</a> when the page loads.</p>
 </div>
 </div>
 <div class="section" id="embedding">
-<h2>3.2. Embedding<a class="headerlink" href="#embedding" title="Permalink to this headline">¶</a></h2>
+<h2>Embedding<a class="headerlink" href="#embedding" title="Permalink to this headline">¶</a></h2>
 <p>On several public database pages a map is embedded to show the station
 location or provide an overview of multiple stations. Moreover, maps are
 also used on our main website to give an overview of the station
@@ -130,7 +130,7 @@ shows another page which only has the map as its content. Example code:</p>
   <iframe src="http://data.hisparc.nl/maps/Netherlands/Amsterdam/Science%20Park/"
         scrolling="no" frameborder="0" width="600" height="300"></iframe>
 </div><div class="section" id="syntax">
-<h3>3.2.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
+<h3>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
 <p>To show a map of a specific region or location, use the syntax explained
 here. First start with the base url:</p>
 <div class="highlight-python"><div class="highlight"><pre>http://data.hisparc.nl/maps/
@@ -182,14 +182,14 @@ station number:</p>
             </a></p>
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">3. HiSPARC maps</a><ul>
-<li><a class="reference internal" href="#openstreetmap">3.1. OpenStreetMap</a><ul>
-<li><a class="reference internal" href="#controls">3.1.1. Controls</a></li>
-<li><a class="reference internal" href="#status">3.1.2. Status</a></li>
+<li><a class="reference internal" href="#">HiSPARC maps</a><ul>
+<li><a class="reference internal" href="#openstreetmap">OpenStreetMap</a><ul>
+<li><a class="reference internal" href="#controls">Controls</a></li>
+<li><a class="reference internal" href="#status">Status</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#embedding">3.2. Embedding</a><ul>
-<li><a class="reference internal" href="#syntax">3.2.1. Syntax</a></li>
+<li><a class="reference internal" href="#embedding">Embedding</a><ul>
+<li><a class="reference internal" href="#syntax">Syntax</a></li>
 </ul>
 </li>
 </ul>
@@ -198,10 +198,10 @@ station number:</p>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="api_tutorial.html"
-                        title="previous chapter">2. API Tutorial</a></p>
+                        title="previous chapter">API Tutorial</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="station_layout.html"
-                        title="next chapter">4. HiSPARC station layout</a></p>
+                        title="next chapter">HiSPARC station layout</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/hisparc_maps.txt"
@@ -234,12 +234,12 @@ station number:</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="station_layout.html" title="4. HiSPARC station layout"
+          <a href="station_layout.html" title="HiSPARC station layout"
              >next</a> |</li>
         <li class="right" >
-          <a href="api_tutorial.html" title="2. API Tutorial"
+          <a href="api_tutorial.html" title="API Tutorial"
              >previous</a> |</li>
-        <li><a href="index.html">Public Database 0.3 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Public Database 0.4 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

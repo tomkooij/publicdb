@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2. API Tutorial &mdash; Public Database 0.3 documentation</title>
+    <title>API Tutorial &mdash; Public Database 0.4 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.3',
+        VERSION:     '0.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,9 +26,9 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="Public Database 0.3 documentation" href="index.html" />
-    <link rel="next" title="3. HiSPARC maps" href="hisparc_maps.html" />
-    <link rel="prev" title="1. Data access" href="data_access.html" /> 
+    <link rel="top" title="Public Database 0.4 documentation" href="index.html" />
+    <link rel="next" title="HiSPARC maps" href="hisparc_maps.html" />
+    <link rel="prev" title="Data access" href="data_access.html" /> 
   </head>
   <body>
     <div class="related">
@@ -41,12 +41,12 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="hisparc_maps.html" title="3. HiSPARC maps"
+          <a href="hisparc_maps.html" title="HiSPARC maps"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="data_access.html" title="1. Data access"
+          <a href="data_access.html" title="Data access"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Public Database 0.3 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Public Database 0.4 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -56,7 +56,7 @@
           <div class="body">
             
   <div class="section" id="api-tutorial">
-<h1>2. API Tutorial<a class="headerlink" href="#api-tutorial" title="Permalink to this headline">¶</a></h1>
+<h1>API Tutorial<a class="headerlink" href="#api-tutorial" title="Permalink to this headline">¶</a></h1>
 <p>The HiSPARC API (Application Programming Interface) simplifies
 metadata access from other applications. In this tutorial, we&#8217;ll give
 some examples of how this data can be accessed and used with Javascript
@@ -76,7 +76,7 @@ are new to coding you can try a tutorial online, for instance
 Python or jQuery.</p>
 </div>
 <div class="section" id="first-look">
-<h2>2.1. First look<a class="headerlink" href="#first-look" title="Permalink to this headline">¶</a></h2>
+<h2>First look<a class="headerlink" href="#first-look" title="Permalink to this headline">¶</a></h2>
 <p>First we will just look at what this API is. The API can be accessed
 via the internet by opening urls. Instead of a website you get data as a
 response. This data is formatted as a JSON (JavaScript Object Notation),
@@ -101,7 +101,7 @@ key (<tt class="code docutils literal"><span class="pre">&quot;clusters&quot;</s
 (<tt class="code docutils literal"><span class="pre">&quot;clusters/&quot;</span></tt>,
 <tt class="code docutils literal"><span class="pre">&quot;station/{station_id}/data/{year}/{month}/{day}/&quot;</span></tt>).</p>
 <div class="section" id="cluster-list">
-<h3>2.1.1. Cluster list<a class="headerlink" href="#cluster-list" title="Permalink to this headline">¶</a></h3>
+<h3>Cluster list<a class="headerlink" href="#cluster-list" title="Permalink to this headline">¶</a></h3>
 <p>This tells us that if we want a list of all clusters we need to use the
 clusters option by appending <tt class="code docutils literal"><span class="pre">&quot;clusters/&quot;</span></tt> to the base url,
 resulting in the following:
@@ -123,7 +123,7 @@ the network of stations can be retrieved.</p>
 </div>
 </div>
 <div class="section" id="javascript-example">
-<h2>2.2. Javascript example<a class="headerlink" href="#javascript-example" title="Permalink to this headline">¶</a></h2>
+<h2>Javascript example<a class="headerlink" href="#javascript-example" title="Permalink to this headline">¶</a></h2>
 <p>The following code example will generate a webpage which will use the
 API to get an up-to-date list of stations. It will then show a
 drop-down menu from which a station can be selected, once you have
@@ -172,7 +172,7 @@ your own HTML file with this code:</p>
 </div>
 </div>
 <div class="section" id="python-example">
-<h2>2.3. Python example<a class="headerlink" href="#python-example" title="Permalink to this headline">¶</a></h2>
+<h2>Python example<a class="headerlink" href="#python-example" title="Permalink to this headline">¶</a></h2>
 <p>In this example we will use several standard Python libraries and the
 popular plotting library <a class="reference external" href="http://matplotlib.org">matplotlib</a> (pylab).
 We start by importing the required libraries, one to get data from the
@@ -181,7 +181,7 @@ define the start values and perpare two empty lists in which the data
 can be placed. Then a while loop is used to loop over all days between
 datum and end_datum, reading each corresponding url. Finally a plot is
 made, setting the dates against their values.</p>
-<p>Start Python and type (or copy/paste without the :code:<a href="#id1"><span class="problematic" id="id2">`</span></a>&gt;&gt;&gt; <a href="#id3"><span class="problematic" id="id4">`</span></a>) the
+<p>Start Python and type (or copy/paste without the <tt class="code docutils literal"><span class="pre">&gt;&gt;&gt;</span></tt>) the
 following lines of code:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">urlopen</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">timedelta</span>
@@ -203,7 +203,7 @@ following lines of code:</p>
 </pre></div>
 </div>
 <div class="section" id="sapphire">
-<h3>2.3.1. SAPPHiRE<a class="headerlink" href="#sapphire" title="Permalink to this headline">¶</a></h3>
+<h3>SAPPHiRE<a class="headerlink" href="#sapphire" title="Permalink to this headline">¶</a></h3>
 <p>The HiSPARC Python framework SAPPHiRE includes an API module. This module
 simplifies access to the API. See the SAPPHiRE documentation for more
 information:
@@ -223,14 +223,14 @@ information:
             </a></p>
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">2. API Tutorial</a><ul>
-<li><a class="reference internal" href="#first-look">2.1. First look</a><ul>
-<li><a class="reference internal" href="#cluster-list">2.1.1. Cluster list</a></li>
+<li><a class="reference internal" href="#">API Tutorial</a><ul>
+<li><a class="reference internal" href="#first-look">First look</a><ul>
+<li><a class="reference internal" href="#cluster-list">Cluster list</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#javascript-example">2.2. Javascript example</a></li>
-<li><a class="reference internal" href="#python-example">2.3. Python example</a><ul>
-<li><a class="reference internal" href="#sapphire">2.3.1. SAPPHiRE</a></li>
+<li><a class="reference internal" href="#javascript-example">Javascript example</a></li>
+<li><a class="reference internal" href="#python-example">Python example</a><ul>
+<li><a class="reference internal" href="#sapphire">SAPPHiRE</a></li>
 </ul>
 </li>
 </ul>
@@ -239,10 +239,10 @@ information:
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="data_access.html"
-                        title="previous chapter">1. Data access</a></p>
+                        title="previous chapter">Data access</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="hisparc_maps.html"
-                        title="next chapter">3. HiSPARC maps</a></p>
+                        title="next chapter">HiSPARC maps</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/api_tutorial.txt"
@@ -275,12 +275,12 @@ information:
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="hisparc_maps.html" title="3. HiSPARC maps"
+          <a href="hisparc_maps.html" title="HiSPARC maps"
              >next</a> |</li>
         <li class="right" >
-          <a href="data_access.html" title="1. Data access"
+          <a href="data_access.html" title="Data access"
              >previous</a> |</li>
-        <li><a href="index.html">Public Database 0.3 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Public Database 0.4 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
