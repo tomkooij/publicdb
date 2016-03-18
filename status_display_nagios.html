@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="Public Database 0.4 documentation" href="index.html" />
     <link rel="up" title="Status Display Reference" href="status_display.html" />
     <link rel="prev" title="Status Display Views Reference" href="status_display_views.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,21 +43,21 @@
         <li class="right" >
           <a href="status_display_views.html" title="Status Display Views Reference"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Public Database 0.4 documentation</a> &raquo;</li>
-          <li><a href="status_display.html" accesskey="U">Status Display Reference</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Public Database 0.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="status_display.html" accesskey="U">Status Display Reference</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-django_publicdb.status_display.nagios">
 <span id="nagios-status-reference"></span><h1>Nagios Status Reference<a class="headerlink" href="#module-django_publicdb.status_display.nagios" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="django_publicdb.status_display.nagios.down_list">
-<tt class="descname">down_list</tt><big>(</big><big>)</big><a class="headerlink" href="#django_publicdb.status_display.nagios.down_list" title="Permalink to this definition">¶</a></dt>
+<code class="descname">down_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#django_publicdb.status_display.nagios.down_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get Nagios page which lists DOWN hosts</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -71,7 +71,7 @@
 
 <dl class="function">
 <dt id="django_publicdb.status_display.nagios.get_station_status">
-<tt class="descname">get_station_status</tt><big>(</big><em>station_number</em>, <em>down</em>, <em>problem</em>, <em>up</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.nagios.get_station_status" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_station_status</code><span class="sig-paren">(</span><em>station_number</em>, <em>down</em>, <em>problem</em>, <em>up</em><span class="sig-paren">)</span><a class="headerlink" href="#django_publicdb.status_display.nagios.get_station_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if station is in down, problem or up list.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -95,7 +95,7 @@ station occurs in multiple lists, the worst case is returned.</p>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.nagios.get_status_counts">
-<tt class="descname">get_status_counts</tt><big>(</big><em>down</em>, <em>problem</em>, <em>up</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.nagios.get_status_counts" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_status_counts</code><span class="sig-paren">(</span><em>down</em>, <em>problem</em>, <em>up</em><span class="sig-paren">)</span><a class="headerlink" href="#django_publicdb.status_display.nagios.get_status_counts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the lengths of the status lists</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -117,7 +117,7 @@ station occurs in multiple lists, the worst case is returned.</p>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.nagios.pc_name_to_station_number">
-<tt class="descname">pc_name_to_station_number</tt><big>(</big><em>shortnames</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.nagios.pc_name_to_station_number" title="Permalink to this definition">¶</a></dt>
+<code class="descname">pc_name_to_station_number</code><span class="sig-paren">(</span><em>shortnames</em><span class="sig-paren">)</span><a class="headerlink" href="#django_publicdb.status_display.nagios.pc_name_to_station_number" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert list of pc names to station numbers</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -133,7 +133,7 @@ station occurs in multiple lists, the worst case is returned.</p>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.nagios.problem_list">
-<tt class="descname">problem_list</tt><big>(</big><big>)</big><a class="headerlink" href="#django_publicdb.status_display.nagios.problem_list" title="Permalink to this definition">¶</a></dt>
+<code class="descname">problem_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#django_publicdb.status_display.nagios.problem_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get Nagios page which lists hosts with a problem</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -148,7 +148,7 @@ the host has status OK, but some services are CRITICAL.</td>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.nagios.retrieve_station_status">
-<tt class="descname">retrieve_station_status</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#django_publicdb.status_display.nagios.retrieve_station_status" title="Permalink to this definition">¶</a></dt>
+<code class="descname">retrieve_station_status</code><span class="sig-paren">(</span><em>query</em><span class="sig-paren">)</span><a class="headerlink" href="#django_publicdb.status_display.nagios.retrieve_station_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get station list from Nagios page which lists hosts of certain level</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -164,7 +164,7 @@ the host has status OK, but some services are CRITICAL.</td>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.nagios.status_lists">
-<tt class="descname">status_lists</tt><big>(</big><big>)</big><a class="headerlink" href="#django_publicdb.status_display.nagios.status_lists" title="Permalink to this definition">¶</a></dt>
+<code class="descname">status_lists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#django_publicdb.status_display.nagios.status_lists" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get various station status lists from Nagios</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -179,7 +179,7 @@ the status the variable name implies.</td>
 
 <dl class="function">
 <dt id="django_publicdb.status_display.nagios.up_list">
-<tt class="descname">up_list</tt><big>(</big><big>)</big><a class="headerlink" href="#django_publicdb.status_display.nagios.up_list" title="Permalink to this definition">¶</a></dt>
+<code class="descname">up_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#django_publicdb.status_display.nagios.up_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get Nagios page which lists UP hosts</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -202,7 +202,7 @@ the status the variable name implies.</td>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/header.png" alt="Logo"/>
@@ -210,12 +210,14 @@ the status the variable name implies.</td>
   <h4>Previous topic</h4>
   <p class="topless"><a href="status_display_views.html"
                         title="previous chapter">Status Display Views Reference</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/status_display_nagios.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/status_display_nagios.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -232,7 +234,7 @@ the status the variable name implies.</td>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -244,13 +246,13 @@ the status the variable name implies.</td>
         <li class="right" >
           <a href="status_display_views.html" title="Status Display Views Reference"
              >previous</a> |</li>
-        <li><a href="index.html">Public Database 0.4 documentation</a> &raquo;</li>
-          <li><a href="status_display.html" >Status Display Reference</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Public Database 0.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="status_display.html" >Status Display Reference</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2015, HiSPARC.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
     </div>
   </body>
 </html>

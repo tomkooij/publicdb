@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="Public Database 0.4 documentation" href="index.html" />
     <link rel="next" title="API Reference" href="api.html" />
     <link rel="prev" title="HiSPARC maps" href="hisparc_maps.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -46,14 +46,14 @@
         <li class="right" >
           <a href="hisparc_maps.html" title="HiSPARC maps"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Public Database 0.4 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Public Database 0.4 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="hisparc-station-layout">
 <h1>HiSPARC station layout<a class="headerlink" href="#hisparc-station-layout" title="Permalink to this headline">¶</a></h1>
@@ -69,19 +69,19 @@ communicated to us.</p>
 <h2>Compass coordinates<a class="headerlink" href="#compass-coordinates" title="Permalink to this headline">¶</a></h2>
 <p>The coordinate system we have chosen for describing the position of
 detectors is illustrated in the following figure.</p>
-<a class="reference internal image-reference" href="_images/coordinate_system.png"><img alt="_images/coordinate_system.png" src="_images/coordinate_system.png" style="width: 314px;" /></a>
+<a class="reference internal image-reference" href="_images/coordinate_system.png"><img alt="_images/coordinate_system.png" src="_images/coordinate_system.png" style="width: 313px;" /></a>
 <p>For each detector 3 (or 4) coordinates need to be determined:</p>
 <ul class="simple">
-<li>First the distance (<tt class="code docutils literal"><span class="pre">r</span></tt>) from the GPS to the center of the
+<li>First the distance (<code class="code docutils literal"><span class="pre">r</span></code>) from the GPS to the center of the
 scintillator (in meters).</li>
-<li>Next the alpha angle (<tt class="code docutils literal"><span class="pre">α</span></tt>) which is the clock-wise turning angle
+<li>Next the alpha angle (<code class="code docutils literal"><span class="pre">α</span></code>) which is the clock-wise turning angle
 between North and the detector as seen from the GPS (in degrees).</li>
-<li>A height (<tt class="code docutils literal"><span class="pre">z</span></tt>) coordinate can be measured if there is a
+<li>A height (<code class="code docutils literal"><span class="pre">z</span></code>) coordinate can be measured if there is a
 significant altitude difference between the GPS antenna and the
 detectors, or if the detectors are not at the same height. Up is
 positive (in meters).</li>
 <li>The rotation of the detector is described by the beta angle
-(<tt class="code docutils literal"><span class="pre">β</span></tt>), which is the clock-wise turning rotation of the long side
+(<code class="code docutils literal"><span class="pre">β</span></code>), which is the clock-wise turning rotation of the long side
 of the detector relative to North (in degrees).</li>
 </ul>
 <p>For more information about the coordinate systems used in HiSPARC see:
@@ -92,14 +92,15 @@ walks students through the process of measuring the station layout:
 </div>
 <div class="section" id="submitting-the-measurements">
 <h2>Submitting the measurements<a class="headerlink" href="#submitting-the-measurements" title="Permalink to this headline">¶</a></h2>
-<p>New layouts can be submitted via the <a class="reference external" href="http://data.hisparc.nl/layout/submit/">layout submit form</a>. The submitted measurements
-will be reviewed before they are accepted and stored in the database.</p>
+<p>New layouts can be submitted via the <a class="reference external" href="http://data.hisparc.nl/layout/submit/">layout submit form</a>. A verification e-mail will be sent
+to the submitter. The submitted measurements will be reviewed before they are
+made available on the website and via the API.</p>
 </div>
 <div class="section" id="accessing-the-data">
 <h2>Accessing the data<a class="headerlink" href="#accessing-the-data" title="Permalink to this headline">¶</a></h2>
-<p>If you are analysing data or are making a schematic drawing of the
-station layout you can access the detector coordinates via the
-<a class="reference internal" href="api_tutorial.html"><em>API</em></a>.</p>
+<p>The detector coordinates can be accessed via the <a class="reference internal" href="api_tutorial.html"><em>API</em></a>.
+These can, for example, be used when analysing data or when making a schematic
+drawing of the station layout.</p>
 </div>
 </div>
 
@@ -107,7 +108,7 @@ station layout you can access the detector coordinates via the
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/header.png" alt="Logo"/>
@@ -128,12 +129,14 @@ station layout you can access the detector coordinates via the
   <h4>Next topic</h4>
   <p class="topless"><a href="api.html"
                         title="next chapter">API Reference</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/station_layout.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/station_layout.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -150,7 +153,7 @@ station layout you can access the detector coordinates via the
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -165,12 +168,12 @@ station layout you can access the detector coordinates via the
         <li class="right" >
           <a href="hisparc_maps.html" title="HiSPARC maps"
              >previous</a> |</li>
-        <li><a href="index.html">Public Database 0.4 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Public Database 0.4 documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2015, HiSPARC.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
     </div>
   </body>
 </html>

@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="Public Database 0.4 documentation" href="index.html" />
     <link rel="next" title="HiSPARC maps" href="hisparc_maps.html" />
     <link rel="prev" title="Data access" href="data_access.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -46,14 +46,14 @@
         <li class="right" >
           <a href="data_access.html" title="Data access"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Public Database 0.4 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Public Database 0.4 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="api-tutorial">
 <h1>API Tutorial<a class="headerlink" href="#api-tutorial" title="Permalink to this headline">¶</a></h1>
@@ -70,7 +70,7 @@ please see the <a class="reference internal" href="api.html"><em>API Reference</
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">We&#8217;ll require you to know some basic programming, i.e. to understand
-what an <tt class="code docutils literal"><span class="pre">if</span></tt> statement is and <tt class="code docutils literal"><span class="pre">for</span></tt> loop does. If you
+what an <code class="code docutils literal"><span class="pre">if</span></code> statement is and <code class="code docutils literal"><span class="pre">for</span></code> loop does. If you
 are new to coding you can try a tutorial online, for instance
 <a class="reference external" href="http://www.codecademy.com/">Codeacademy</a>, we recommend learning
 Python or jQuery.</p>
@@ -95,15 +95,15 @@ Explorer): <a class="reference external" href="http://data.hisparc.nl/api/">http
  <span class="s2">&quot;subclusters_in_cluster&quot;</span><span class="o">:</span> <span class="s2">&quot;clusters/{cluster_id}/&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>This is the JSON, it is a dictionary (indicated by the <tt class="code docutils literal"><span class="pre">{</span></tt> and
-<tt class="code docutils literal"><span class="pre">}</span></tt> enclosing brackets): an object which has keys and values. Each
-key (<tt class="code docutils literal"><span class="pre">&quot;clusters&quot;</span></tt>, <tt class="code docutils literal"><span class="pre">&quot;has_data&quot;</span></tt>) refers to a value
-(<tt class="code docutils literal"><span class="pre">&quot;clusters/&quot;</span></tt>,
-<tt class="code docutils literal"><span class="pre">&quot;station/{station_id}/data/{year}/{month}/{day}/&quot;</span></tt>).</p>
+<p>This is the JSON, it is a dictionary (indicated by the <code class="code docutils literal"><span class="pre">{</span></code> and
+<code class="code docutils literal"><span class="pre">}</span></code> enclosing brackets): an object which has keys and values. Each
+key (<code class="code docutils literal"><span class="pre">&quot;clusters&quot;</span></code>, <code class="code docutils literal"><span class="pre">&quot;has_data&quot;</span></code>) refers to a value
+(<code class="code docutils literal"><span class="pre">&quot;clusters/&quot;</span></code>,
+<code class="code docutils literal"><span class="pre">&quot;station/{station_id}/data/{year}/{month}/{day}/&quot;</span></code>).</p>
 <div class="section" id="cluster-list">
 <h3>Cluster list<a class="headerlink" href="#cluster-list" title="Permalink to this headline">¶</a></h3>
 <p>This tells us that if we want a list of all clusters we need to use the
-clusters option by appending <tt class="code docutils literal"><span class="pre">&quot;clusters/&quot;</span></tt> to the base url,
+clusters option by appending <code class="code docutils literal"><span class="pre">&quot;clusters/&quot;</span></code> to the base url,
 resulting in the following:
 <a class="reference external" href="http://data.hisparc.nl/api/clusters/">http://data.hisparc.nl/api/clusters/</a>.</p>
 <p>With this result:</p>
@@ -116,7 +116,7 @@ resulting in the following:
   <span class="s2">&quot;number&quot;</span><span class="o">:</span> <span class="mi">70000</span><span class="p">}]</span>
 </pre></div>
 </div>
-<p>This JSON is a list (indicated by the <tt class="code docutils literal"><span class="pre">[</span></tt> and <tt class="code docutils literal"><span class="pre">]</span></tt> enclosing
+<p>This JSON is a list (indicated by the <code class="code docutils literal"><span class="pre">[</span></code> and <code class="code docutils literal"><span class="pre">]</span></code> enclosing
 brackets) of dictionaries, one for each cluster. Each dictionary
 contains the name and number of a cluster. This way information about
 the network of stations can be retrieved.</p>
@@ -127,14 +127,14 @@ the network of stations can be retrieved.</p>
 <p>The following code example will generate a webpage which will use the
 API to get an up-to-date list of stations. It will then show a
 drop-down menu from which a station can be selected, once you have
-chosen a station you can click the <tt class="code docutils literal"><span class="pre">Get</span> <span class="pre">info</span></tt> button to make
+chosen a station you can click the <code class="code docutils literal"><span class="pre">Get</span> <span class="pre">info</span></code> button to make
 Javascript get the station information. To try this you can either use
 this example page: <a class="reference external" href="http://jsfiddle.net/NCWXq/2/">jsFiddle</a> or create
 your own HTML file with this code:</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/jquery-1.11.1.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script&gt;</span>
+<div class="highlight-html"><div class="highlight"><pre><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://code.jquery.com/jquery-1.11.1.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">// Get an up-to-date list of HiSPARC stations</span>
         <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span>
@@ -159,15 +159,15 @@ your own HTML file with this code:</p>
                       <span class="p">});</span>
             <span class="p">});</span>
         <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body</span> <span class="na">style=</span><span class="s">&quot;font-family: sans-serif;&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;h2&gt;</span>Station info<span class="nt">&lt;/h2&gt;</span>
-    <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">&quot;station_list&quot;</span><span class="nt">&gt;</span>Choose a station: <span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">id=</span><span class="s">&quot;get_station&quot;</span> <span class="na">value=</span><span class="s">&quot;Get info&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;pre</span> <span class="na">id=</span><span class="s">&quot;station_info&quot;</span><span class="nt">&gt;&lt;/pre&gt;</span>
-<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;font-family: sans-serif;&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Station info<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;station_list&quot;</span><span class="p">&gt;</span>Choose a station: <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;get_station&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Get info&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">pre</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;station_info&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -181,7 +181,7 @@ define the start values and perpare two empty lists in which the data
 can be placed. Then a while loop is used to loop over all days between
 datum and end_datum, reading each corresponding url. Finally a plot is
 made, setting the dates against their values.</p>
-<p>Start Python and type (or copy/paste without the <tt class="code docutils literal"><span class="pre">&gt;&gt;&gt;</span></tt>) the
+<p>Start Python and type (or copy/paste without the <code class="code docutils literal"><span class="pre">&gt;&gt;&gt;</span></code>) the
 following lines of code:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">urlopen</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">timedelta</span>
@@ -189,7 +189,7 @@ following lines of code:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">id</span> <span class="o">=</span> <span class="mi">501</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">datum</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">end_datum</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2011</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">base</span> <span class="o">=</span> <span class="s">&#39;http://data.hisparc.nl/api/station/</span><span class="si">%d</span><span class="s">/num_events/</span><span class="si">%d</span><span class="s">/</span><span class="si">%d</span><span class="s">/</span><span class="si">%d</span><span class="s">&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">base</span> <span class="o">=</span> <span class="s1">&#39;http://data.hisparc.nl/api/station/</span><span class="si">%d</span><span class="s1">/num_events/</span><span class="si">%d</span><span class="s1">/</span><span class="si">%d</span><span class="s1">/</span><span class="si">%d</span><span class="s1">&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">events</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dates</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="n">datum</span> <span class="o">&lt;</span> <span class="n">end_datum</span><span class="p">:</span>
@@ -216,7 +216,7 @@ information:
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/header.png" alt="Logo"/>
@@ -243,12 +243,14 @@ information:
   <h4>Next topic</h4>
   <p class="topless"><a href="hisparc_maps.html"
                         title="next chapter">HiSPARC maps</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/api_tutorial.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/api_tutorial.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -265,7 +267,7 @@ information:
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -280,12 +282,12 @@ information:
         <li class="right" >
           <a href="data_access.html" title="Data access"
              >previous</a> |</li>
-        <li><a href="index.html">Public Database 0.4 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Public Database 0.4 documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2015, HiSPARC.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
     </div>
   </body>
 </html>
