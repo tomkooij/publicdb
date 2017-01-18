@@ -716,16 +716,27 @@ def num_events(request, station_number, year=None, month=None, day=None,
         filters['source__date__year'] = date.year
     elif not day:
         # Events in specific month
-        date = datetime.date(int(year), int(month), 1)
+        try:
+            date = datetime.date(int(year), int(month), 1)
+        except ValueError:
+            return HttpResponseNotFound()
         filters['source__date__year'] = date.year
         filters['source__date__month'] = date.month
     elif not hour:
         # Events on specific day
-        date = datetime.date(int(year), int(month), int(day))
-        filters['source__date'] = date
-    else:
         try:
             date = datetime.date(int(year), int(month), int(day))
+        except ValueError:
+            return HttpResponseNotFound()
+        filters['source__date'] = date
+    else:
+        if not 0 <= int(hour) <= 23:
+            return HttpResponseNotFound()
+        try:
+            date = datetime.date(int(year), int(month), int(day))
+        except ValueError:
+            return HttpResponseNotFound()
+        try:
             histogram_values = DailyHistogram.objects.get(source__date=date,
                                                           **filters).values
             num_events = histogram_values[int(hour)]
@@ -756,7 +767,11 @@ def get_event_traces(request, station_number, ext_timestamp):
     ext_timestamp = int(ext_timestamp)
     raw = 'raw' in request.GET
 
-    date = datetime.datetime.utcfromtimestamp(ext_timestamp / 1e9).date()
+    try:
+        date = datetime.datetime.utcfromtimestamp(ext_timestamp / 1e9).date()
+    except ValueError:
+        return HttpResponseNotFound()
+
     if not validate_date(date):
         return HttpResponseNotFound()
 

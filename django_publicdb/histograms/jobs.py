@@ -8,24 +8,23 @@ import calendar
 import logging
 import multiprocessing
 
-from sapphire.utils import round_in_base
-from sapphire.analysis.calibration import datetime_range
 import numpy as np
 
-import django.db
+from sapphire.utils import round_in_base
+from sapphire.analysis.calibration import datetime_range
+
+from ..inforecords.models import Station
+from ..station_layout.models import StationLayout
 from .models import (GeneratorState, NetworkSummary, Summary,
                      Configuration, HistogramType, DatasetType,
                      DailyHistogram, NetworkHistogram, DailyDataset,
                      PulseheightFit, DetectorTimingOffset,
                      StationTimingOffset)
-from ..inforecords.models import Station
-from ..station_layout.models import StationLayout
-import datastore
-import esd
+from . import datastore, esd, fit_pulseheight_peak
 
+import django.db
 from django.conf import settings
 
-import fit_pulseheight_peak
 
 logger = logging.getLogger('histograms.jobs')
 
@@ -554,11 +553,15 @@ def update_station_timing_offsets(network_summary):
     summary_date = network_summary.date
 
     stations = esd.get_station_numbers_from_esd_coincidences(network_summary)
-    off = esd.DetermineStationTimingOffsetsESD(stations)
+    network_off = esd.DetermineStationTimingOffsetsESD(stations)
 
-    for ref_sn, sn in off.get_station_pairs_within_max_distance():
+    for ref_sn, sn in network_off.get_station_pairs_within_max_distance():
+        off = esd.DetermineStationTimingOffsetsESD([ref_sn, sn])
+        cuts = off._get_cuts(sn, ref_sn)
         left, right = off.determine_first_and_last_date(summary_date,
                                                         sn, ref_sn)
+        # To only update offset for specific date use:
+        # for date in [summary_date]:
         for date, _ in datetime_range(left, right):
             ref_summary = get_summary_or_none(date, ref_sn)
             if ref_summary is None:
@@ -566,12 +569,16 @@ def update_station_timing_offsets(network_summary):
             summary = get_summary_or_none(date, sn)
             if summary is None:
                 continue
-
-            logger.debug("Determining station offset for %s"
-                         " ref %s at %s" % (summary, ref_summary, date))
-            offset, rchi2 = off.determine_station_timing_offset(date, sn,
-                                                                ref_sn)
-            save_station_offset(ref_summary, summary, offset, rchi2)
+            if date in cuts:
+                logger.debug("Setting offset for config cut to nan for %s"
+                             " ref %s at %s" % (summary, ref_summary, date))
+                offset, error = np.nan, np.nan
+            else:
+                logger.debug("Determining station offset for %s"
+                             " ref %s at %s" % (summary, ref_summary, date))
+                offset, error = off.determine_station_timing_offset(date, sn,
+                                                                    ref_sn)
+            save_station_offset(ref_summary, summary, offset, error)
 
 
 def update_zenith_histogram(summary, tempfile_path, node_path):
@@ -746,24 +753,24 @@ def save_offsets(summary, offsets):
     logger.debug("Saved succesfully")
 
 
-def save_station_offset(ref_summary, summary, offset, rchi2):
+def save_station_offset(ref_summary, summary, offset, error):
     """Store the station timing offset in database
 
     :param summary: summary of station (station and date)
     :param ref_summary: summary of reference station (station and date)
     :param offset: station timing offset
-    :param rchi2: reduced chi squared parameter of the fit
+    :param error: error of the offset
 
     """
     logger.debug("Saving station offset for %s ref %s" % (summary,
                                                           ref_summary))
     field = {}
     if not np.isnan(offset):
-        field['offset'] = offset
-        field['rchi2'] = rchi2
+        field['offset'] = round(offset, 1)
+        field['error'] = round(error, 2)
     else:
         field['offset'] = None
-        field['rchi2'] = None
+        field['error'] = None
 
     StationTimingOffset.objects.update_or_create(source=summary,
                                                  ref_source=ref_summary,

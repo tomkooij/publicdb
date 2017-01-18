@@ -402,7 +402,7 @@ class StationTimingOffset(models.Model):
     ref_source = models.ForeignKey('Summary', related_name='ref_source')
     source = models.ForeignKey('Summary', related_name='source')
     offset = models.FloatField(blank=True, null=True)
-    rchi2 = models.FloatField(blank=True, null=True)
+    error = models.FloatField(blank=True, null=True)
 
     def clean(self):
         if self.ref_source.station == self.source.station:
@@ -411,4 +411,5 @@ class StationTimingOffset(models.Model):
             raise ValidationError("The summary dates should be the same")
 
     class Meta:
+        unique_together = ('ref_source', 'source')
         ordering = ('ref_source',)

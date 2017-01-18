@@ -1,7 +1,7 @@
 ---
 - name: install MySQL server and development libraries
   yum: name={{ item }} state=present
-  sudo: yes
+  become: true
   with_items:
     - mysql-server
     - mysql-devel
@@ -9,10 +9,15 @@
 
 - name: start MySQL server now and on boot
   service: name=mysqld state=started enabled=yes
-  sudo: yes
+  become: true
 
 - name: update MySQL root password for all accounts
-  mysql_user: name=root host={{ item }} password={{ mysql_root_password }}
+  mysql_user: name=root
+              host={{ item }}
+              password={{ mysql_root_password }}
+              login_user=root
+              login_password={{ mysql_root_password }}
+              check_implicit_admin=yes
   with_items:
     - "{{ ansible_fqdn }}"
     - "{{ ansible_hostname }}"
