@@ -39,10 +39,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
   end
 
-  config.vm.provision :ansible do |ansible|
+  config.vm.provision "ansible_local" do |ansible|
     ansible.inventory_path = "provisioning/ansible_inventory"
     ansible.playbook = "provisioning/playbook.yml"
-    ansible.host_key_checking = false
   end
   config.ssh.username = "hisparc"
 end
