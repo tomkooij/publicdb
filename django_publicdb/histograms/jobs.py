@@ -569,6 +569,8 @@ def update_station_timing_offsets(network_summary):
 
     logger.debug("Determining update of station offsets "
                  "for %s" % network_summary)
+    print "DO NOT COMMIT ME!"
+    return None
     summary_date = network_summary.date
 
     stations = esd.get_station_numbers_from_esd_coincidences(network_summary)
